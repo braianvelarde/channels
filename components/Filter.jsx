@@ -27,9 +27,28 @@ export default function Filter({
 
         setFilteredChannels(newChannels);
         break;
+      case "hbo":
+        newChannels = [...channels.filter((channel) => channel.pack === "hbo")];
+
+        setFilteredChannels(newChannels);
+        break;
+      case "star":
+        newChannels = [
+          ...channels.filter((channel) => channel.pack === "star"),
+        ];
+
+        setFilteredChannels(newChannels);
+        break;
       case "basico":
         newChannels = [
           ...channels.filter((channel) => channel.pack === "basico"),
+        ];
+
+        setFilteredChannels(newChannels);
+        break;
+      case "futbol":
+        newChannels = [
+          ...channels.filter((channel) => channel.pack === "futbol"),
         ];
 
         setFilteredChannels(newChannels);

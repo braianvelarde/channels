@@ -12,7 +12,7 @@ export default function Home({ channels }) {
   const [activePack, setActivePack] = useState(null);
 
   return (
-    <div className="bg-[#303032] pt-4 ">
+    <div className="bg-[#303032] pt-4 pb-4">
       <Head>
         <title>Grilla de canales</title>
         <meta
@@ -52,7 +52,7 @@ export default function Home({ channels }) {
 export async function getStaticProps(context) {
   const query = gql`
     query Channels {
-      channels(orderBy: number_ASC) {
+      channels(first: 200, orderBy: number_ASC) {
         id
         name
         number
@@ -69,6 +69,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       channels,
-    }, // will be passed to the page component as props
+    },
+    revalidate: 86400, // will be passed to the page component as props
   };
 }
