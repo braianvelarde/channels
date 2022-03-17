@@ -33,7 +33,7 @@ export default function Home({ channels }) {
         filteredChannels={filteredChannels}
       />
       <AnimatePresence exitBeforeEnter initial={false}>
-        <motion.div className="grid grid-cols-2  grid-rows-4 md:grid-cols-4 md:grid-rows-4 xl:grid-cols-9 xl:grid-rows-4 gap-4 pt-4 px-4">
+        <motion.div className="grid grid-cols-2  grid-rows-4 md:grid-cols-4 md:grid-rows-4 xl:grid-cols-9 xl:grid-rows-4 auto-rows-fr gap-4 pt-4 px-4">
           {filteredChannels &&
             filteredChannels.map((channel) => (
               <ChannelCard
