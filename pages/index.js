@@ -34,8 +34,35 @@ export default function Home({ channels }) {
     }
   };
 
+  function scrollToTop() {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }
+
   return (
-    <div className={(isDarkMode ? "dark" : "") + " h-screen flex flex-col"}>
+    <div
+      className={
+        (isDarkMode ? "dark" : "") + " h-screen flex flex-col scroll-smooth"
+      }
+    >
+      <button
+        onClick={scrollToTop}
+        className="h-14 w-14 flex items-center justify-center rounded-full bg-[#303032] hover:opacity-90 active:scale-95 transition-transform duration-200 dark:text-[#303032] shadow-md text-neutral-100 dark:bg-neutral-100 fixed bottom-5 right-5 z-10 cursor-pointer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M5 15l7-7 7 7"
+          />
+        </svg>
+      </button>
       <div className=" dark:bg-[#303032] text-[#1f1f20] dark:text-white bg-neutral-100 pt-4 pb-4 flex-grow">
         <Head>
           <title>Grilla de canales</title>
