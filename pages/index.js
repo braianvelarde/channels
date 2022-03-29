@@ -40,7 +40,7 @@ export default function Home({ channels }) {
           <title>Grilla de canales</title>
           <meta
             name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+            content="width=device-width, user-scalable=no"
           ></meta>
           <meta
             name="theme-color"
