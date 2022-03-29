@@ -54,7 +54,7 @@ export default function Home({ channels }) {
           <button
             onClick={() => handleDarkMode()}
             className={
-              "bg-[#303032] h-6 w-12 rounded-xl relative cursor-pointer dark:bg-white shadow-sm"
+              "bg-[#303032] h-6 w-12 rounded-xl relative cursor-pointer dark:bg-white shadow-md"
             }
           >
             <span
@@ -62,7 +62,7 @@ export default function Home({ channels }) {
                 (isDarkMode
                   ? "translate-x-full bg-[#303032] border-white "
                   : "translate-x-0 bg-white border-[#303032]") +
-                " rounded-full absolute flex items-center justify-center border-2 top-0 left-0 shadow-sm h-full w-6  transition-transform duration-200"
+                " rounded-full absolute flex items-center justify-center border-2 top-0 left-0 shadow-md h-full w-6  transition-transform duration-200"
               }
             >
               {isDarkMode ? (
