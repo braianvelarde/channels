@@ -10,4 +10,5 @@
 
 body {
   font-family: "Nunito Sans", sans-serif;
+  touch-action: pan-x, pan-y;
 }
