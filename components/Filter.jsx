@@ -59,7 +59,7 @@ export default function Filter({
   }, [activePack, channels, setFilteredChannels]);
 
   return (
-    <div className="pl-4 grid grid-flow-row items-center justify-center space-y-4 text-white font-semibold text-xl overflow-hidden">
+    <div className="pl-4 grid grid-flow-row items-center justify-center space-y-4  font-semibold text-xl overflow-hidden">
       <p>Cantidad de canales: {filteredChannels.length}</p>
       <p className="text-sm">Seleccione un pack:</p>
       <div

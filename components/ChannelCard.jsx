@@ -5,11 +5,12 @@ import { motion } from "framer-motion";
 export default function ChannelCard({ name, number, image }) {
   return (
     <motion.article
+      whileHover={{ y: -5 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="flex flex-col bg-[#39393b] text-white rounded-sm  py-2 shadow-md space-y-2 cursor-pointer hover:translate-y-1 transition-transform duration-150"
+      className="flex flex-col dark:bg-[#39393b] bg-neutral-100 rounded-xl  py-2 shadow-md space-y-2 cursor-pointer"
     >
       <div className="relative self-center h-12 w-2/3">
         <BluredImage src={image} alt={`${name} logo`}></BluredImage>
@@ -32,9 +33,7 @@ function BluredImage({ src, alt }) {
       layout="fill"
       className={
         "duration-500 ease-out" +
-        (isLoading
-          ? "grayscale blur-2xl scale-120"
-          : "grayscale-0 blur-0 scale-100")
+        (isLoading ? " blur-2xl scale-120" : " blur-0 scale-100")
       }
       onLoadingComplete={() => setIsLoading(false)}
     />
