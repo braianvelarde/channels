@@ -22,8 +22,8 @@ export default function Home({ channels }) {
         <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
         <meta name="google" content="notranslate" key="notranslate" />
       </Head>
-      <div className="text-center pt-2 pb-4">
-        <h1 className="text-xl text-white font-semibold">Grilla de señales</h1>
+      <div className="text-center pt-2 pb-6">
+        <h1 className="text-2xl text-white font-semibold">Grilla de señales</h1>
       </div>
       <Filter
         setActivePack={setActivePack}

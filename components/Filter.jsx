@@ -59,12 +59,13 @@ export default function Filter({
   }, [activePack, channels, setFilteredChannels]);
 
   return (
-    <div className="grid grid-cols-3 lg:flex justify-center items-center space-x-4 text-white font-semibold text-xl">
-      <p className="pl-4">Cantidad de canales: {filteredChannels.length}</p>
+    <div className="pl-4 grid grid-flow-row items-center justify-center space-y-4 text-white font-semibold text-xl overflow-hidden">
+      <p>Cantidad de canales: {filteredChannels.length}</p>
+      <p className="text-sm">Seleccione un pack:</p>
       <div
         ref={filtersRef}
         onWheel={(e) => horizontalWheel(e)}
-        className="pl-4 col-start-2 col-span-2 flex overflow-x-scroll scrollbar-hide space-x-2 snap-mandatory snap-x"
+        className="flex overflow-x-scroll scrollbar-hide space-x-2 snap-mandatory snap-x"
       >
         <FilterButton
           activePack={activePack}
