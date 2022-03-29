@@ -38,10 +38,7 @@ export default function Home({ channels }) {
       <div className=" dark:bg-[#303032] text-[#1f1f20] dark:text-white bg-neutral-100 pt-4 pb-4 flex-grow">
         <Head>
           <title>Grilla de canales</title>
-          <meta
-            name="viewport"
-            content="width=device-width, user-scalable=no"
-          ></meta>
+          <meta name="viewport" content="width=device-width"></meta>
           <meta
             name="theme-color"
             content={isDarkMode ? "#303032" : "#f5f5f5"}
@@ -119,7 +116,7 @@ export default function Home({ channels }) {
   );
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const query = gql`
     query Channels {
       channels(first: 200, orderBy: number_ASC) {
@@ -140,6 +137,5 @@ export async function getStaticProps(context) {
     props: {
       channels,
     },
-    revalidate: 86400, // will be passed to the page component as props
   };
 }
