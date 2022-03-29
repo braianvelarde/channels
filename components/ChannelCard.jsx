@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -22,6 +22,7 @@ export default function ChannelCard({ name, number, image }) {
     </motion.article>
   );
 }
+export const MemoizedChannelCard = React.memo(ChannelCard);
 
 function BluredImage({ src, alt }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,3 +40,5 @@ function BluredImage({ src, alt }) {
     />
   );
 }
+
+export const MemoizedBluredImage = React.memo(BluredImage);
