@@ -39,6 +39,10 @@ export default function Home({ channels }) {
         <Head>
           <title>Grilla de canales</title>
           <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          ></meta>
+          <meta
             name="theme-color"
             content={isDarkMode ? "#303032" : "#f5f5f5"}
           ></meta>
