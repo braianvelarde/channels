@@ -30,6 +30,7 @@ function BluredImage({ src, alt }) {
     <Image
       src={src}
       alt={alt}
+      sizes="50vw"
       objectFit="contain"
       layout="fill"
       className={

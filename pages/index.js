@@ -6,6 +6,7 @@ import { request, GraphQLClient, gql } from "graphql-request";
 import ChannelCard from "../components/ChannelCard";
 import { useState, useEffect } from "react";
 import Filter from "../components/Filter";
+import Script from "next/script";
 
 export default function Home({ channels }) {
   const dm = useEffect(() => {
@@ -67,6 +68,17 @@ export default function Home({ channels }) {
           <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
           <meta name="google" content="notranslate" key="notranslate" />
         </Head>
+        <Script
+          id="google tag manager"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-T9MZ4DX');`,
+          }}
+        />
         <div className="flex space-x-4 justify-center items-center pt-2 pb-6">
           <h1 className="text-2xl font-semibold">Grilla de señales</h1>
           <button
