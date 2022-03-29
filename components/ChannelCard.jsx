@@ -32,7 +32,7 @@ function BluredImage({ src, alt }) {
       objectFit="contain"
       layout="fill"
       className={
-        "duration-500 ease-out" +
+        "duration-500 ease-in-out" +
         (isLoading ? " blur-2xl scale-120" : " blur-0 scale-100")
       }
       onLoadingComplete={() => setIsLoading(false)}

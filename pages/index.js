@@ -14,7 +14,7 @@ export default function Home({ channels }) {
 
   return (
     <div className={isDarkMode ? "dark" : ""}>
-      <div className=" dark:bg-[#303032] text-[#1f1f20] dark:text-white bg-neutral-100 pt-4 pb-4 transition-colors duration-150">
+      <div className=" dark:bg-[#303032] text-[#1f1f20] dark:text-white bg-neutral-100 pt-4 pb-4">
         <Head>
           <title>Grilla de canales</title>
           <meta
@@ -41,7 +41,7 @@ export default function Home({ channels }) {
                 (isDarkMode
                   ? "translate-x-full bg-green-500 "
                   : "translate-x-0 bg-white") +
-                " rounded-full absolute flex items-center justify-center top-0 left-0 shadow-sm h-full w-6  transition-transform"
+                " rounded-full absolute flex items-center justify-center top-0 left-0 shadow-sm h-full w-6  transition-transform duration-200"
               }
             >
               {isDarkMode ? (
