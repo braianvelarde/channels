@@ -50,6 +50,29 @@ export default function Home({ channels }) {
             name="description"
             content="Grilla de señales de tv de RSO, Carilo Digital, Lobos Digital y Rpereznet"
           />
+          <meta property="og:type" content="article" />
+          <meta property="og:title" content="Grilla de señales de TV" />
+          <meta
+            property="og:image"
+            content="http://www.rsonet.com.ar/wp-content/uploads/elementor/thumbs/Logo-RSO-ozb0zqr17htgmazwu0bj3hy4tda6iq09fen5ge2n7k.png"
+          />
+          <meta
+            property="og:description"
+            content="Grilla de señales de tv de RSO, Carilo Digital, Lobos Digital y Rpereznet"
+          />
+          <meta property="og:url" content="https://canales-rso.vercel.app/" />
+          <meta property="og:site_name" content="Grilla de señales" />
+          <meta name="twitter:title" content="Grilla de señales de TV" />
+          <meta
+            name="twitter:description"
+            content="Grilla de señales de tv de RSO, Carilo Digital, Lobos Digital y Rpereznet"
+          />
+          <meta
+            name="twitter:image"
+            content="http://www.rsonet.com.ar/wp-content/uploads/elementor/thumbs/Logo-RSO-ozb0zqr17htgmazwu0bj3hy4tda6iq09fen5ge2n7k.png"
+          />
+          <meta name="twitter:site" content="@braianvelarde" />
+          <meta name="twitter:creator" content="@braianvelarde" />
           <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
           <meta name="google" content="notranslate" key="notranslate" />
         </Head>
