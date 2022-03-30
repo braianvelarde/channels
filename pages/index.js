@@ -45,6 +45,7 @@ export default function Home({ channels }) {
       }
     >
       <button
+        aria-label="scroll to top"
         onClick={scrollToTop}
         className="h-14 w-14 flex items-center justify-center rounded-full bg-[#303032] hover:opacity-90 active:scale-95 transition-transform duration-200 dark:text-[#303032] shadow-md text-neutral-100 dark:bg-neutral-100 fixed bottom-5 right-5 z-10 cursor-pointer"
       >
