@@ -73,7 +73,7 @@ export default function Home({ channels }) {
         <Head>
           <title>
             Grilla de canales de tv RSO, Carilo Digital, Lobos Digital,
-            Rpereznet Canales
+            Rpereznet
           </title>
           <meta name="viewport" content="width=device-width"></meta>
           <meta
