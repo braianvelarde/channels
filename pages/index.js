@@ -6,6 +6,7 @@ import ChannelCard from "../components/ChannelCard";
 import { useState, useEffect } from "react";
 import Filter from "../components/Filter";
 import Script from "next/script";
+import Footer from "../components/Footer";
 
 export default function Home({ channels }) {
   const dm = useEffect(() => {
@@ -20,7 +21,7 @@ export default function Home({ channels }) {
   }, []);
 
   const [filteredChannels, setFilteredChannels] = useState(channels);
-  const [activePack, setActivePack] = useState("All");
+  const [activePack, setActivePack] = useState("todos");
   const [isDarkMode, setIsDarkMode] = useState(() => dm);
 
   const handleDarkMode = () => {
@@ -167,6 +168,9 @@ export default function Home({ channels }) {
             </span>
           </button>
         </div>
+        <h2 className="text-center pb-4">
+          Lista de canales para decodificador HD
+        </h2>
 
         <Filter
           setActivePack={setActivePack}
@@ -177,9 +181,12 @@ export default function Home({ channels }) {
         />
         <AnimatePresence exitBeforeEnter initial={false}>
           <motion.section>
-            <h4 className="text-center py-4">
-              Lista de canales para decodificador.
-            </h4>
+            <h5 className="text-center py-4">
+              Canales en el pack:{" "}
+              {activePack.toLowerCase().charAt(0).toUpperCase() +
+                activePack.slice(1)}
+              .
+            </h5>
             <div className="grid grid-cols-2  grid-rows-4 md:grid-cols-4 md:grid-rows-4 xl:grid-cols-9 xl:grid-rows-4 auto-rows-fr gap-4 pt-4 px-4">
               {filteredChannels
                 ? filteredChannels.map((channel) => (
@@ -194,6 +201,7 @@ export default function Home({ channels }) {
             </div>
           </motion.section>
         </AnimatePresence>
+        <Footer />
       </div>
     </div>
   );
