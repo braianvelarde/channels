@@ -110,9 +110,40 @@ export default function Home({ channels }) {
           }}
         />
         <div className="flex space-x-4 justify-center items-center pt-2 pb-6">
-          <h1 className="text-2xl font-semibold">
-            Grilla de señales de TV de : RSO, Carilo Digital, Lobos Digital y
-            Rpereznet
+          <h1 className="text-2xl font-semibold flex space-x-2">
+            <span>Grilla de señales de TV de:</span>
+            <a
+              rel="external noreferrer tag"
+              target="_blank"
+              href="http://www.rsonet.com.ar/"
+              className="hover:underline cursor-pointer"
+            >
+              RSO
+            </a>
+            <a
+              rel="external noreferrer"
+              target="_blank"
+              href="http://www.carilodigital.com.ar/"
+              className="hover:underline cursor-pointer"
+            >
+              Carilo Digital
+            </a>
+            <a
+              rel="external noreferrer tag"
+              target="_blank"
+              href="https://www.lobosdigital.com.ar/"
+              className="hover:underline cursor-pointer"
+            >
+              Lobos Digital
+            </a>
+            <a
+              rel="external noreferrer tag"
+              target="_blank"
+              href="https://rpereznetonline.com.ar/"
+              className="hover:underline cursor-pointer"
+            >
+              Rpereznet
+            </a>
           </h1>
           <button
             onClick={() => handleDarkMode()}
