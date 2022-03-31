@@ -6,8 +6,6 @@ import ChannelCard from "../components/ChannelCard";
 import { useState, useEffect } from "react";
 import Filter from "../components/Filter";
 import Script from "next/script";
-import ChannelList from "../components/ChannelList";
-import { useInView } from "react-intersection-observer";
 
 export default function Home({ channels }) {
   const dm = useEffect(() => {
@@ -39,10 +37,6 @@ export default function Home({ channels }) {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }
 
-  const { ref, inView, entry } = useInView({
-    /* Optional options */
-    threshold: 0,
-  });
   return (
     <div
       className={
@@ -142,9 +136,7 @@ export default function Home({ channels }) {
             </span>
           </button>
         </div>
-        <h2 className="text-center pb-4">
-          Lista de canales para decodificador.
-        </h2>
+
         <Filter
           setActivePack={setActivePack}
           setFilteredChannels={setFilteredChannels}
@@ -153,20 +145,22 @@ export default function Home({ channels }) {
           filteredChannels={filteredChannels}
         />
         <AnimatePresence exitBeforeEnter initial={false}>
-          <motion.section
-            ref={ref}
-            className="grid grid-cols-2  grid-rows-4 md:grid-cols-4 md:grid-rows-4 xl:grid-cols-9 xl:grid-rows-4 auto-rows-fr gap-4 pt-4 px-4"
-          >
-            {filteredChannels
-              ? filteredChannels.map((channel) => (
-                  <ChannelCard
-                    key={channel.id}
-                    name={channel.name}
-                    image={channel.image.url}
-                    number={channel.number}
-                  />
-                ))
-              : null}
+          <motion.section>
+            <h2 className="text-center py-4">
+              Lista de canales para decodificador.
+            </h2>
+            <div className="grid grid-cols-2  grid-rows-4 md:grid-cols-4 md:grid-rows-4 xl:grid-cols-9 xl:grid-rows-4 auto-rows-fr gap-4 pt-4 px-4">
+              {filteredChannels
+                ? filteredChannels.map((channel) => (
+                    <ChannelCard
+                      key={channel.id}
+                      name={channel.name}
+                      image={channel.image.url}
+                      number={channel.number}
+                    />
+                  ))
+                : null}
+            </div>
           </motion.section>
         </AnimatePresence>
       </div>
