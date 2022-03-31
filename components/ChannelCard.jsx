@@ -16,7 +16,7 @@ const ChannelCard = ({ name, number, image }) => {
         <BluredImage src={image} alt={`${name} logo`}></BluredImage>
       </div>
       <div className="flex flex-col justify-between flex-grow px-5">
-        <p className="text-lg font-bold">{name}</p>
+        <h5 className="text-lg font-bold">{name}</h5>
         <p>{number}</p>
       </div>
     </motion.article>
