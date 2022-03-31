@@ -71,7 +71,7 @@ export default function Home({ channels }) {
       </button>
       <div className=" dark:bg-[#303032] text-[#1f1f20] dark:text-white bg-neutral-100 pt-4 pb-4 flex-grow">
         <Head>
-          <title>Grilla de canales</title>
+          <title>Grilla de canales de tv - RSO</title>
           <meta name="viewport" content="width=device-width"></meta>
           <meta
             name="theme-color"
@@ -79,21 +79,21 @@ export default function Home({ channels }) {
           ></meta>
           <meta
             name="description"
-            content="Grilla de señales de tv de RSO, Carilo Digital, Lobos Digital y Rpereznet"
+            content="Grilla de señales de tv de RSO, Carilo Digital, Lobos Digital y Rpereznet.  Canales Rso, Carilo Digital, Lobos Digital y Rpereznet"
           />
           <meta property="og:type" content="article" />
-          <meta property="og:title" content="Grilla de señales de TV" />
+          <meta property="og:title" content="Grilla de señales de TV." />
           <meta property="og:image" content="/Logo-RSO.png" />
           <meta
             property="og:description"
-            content="Grilla de señales de tv de RSO, Carilo Digital, Lobos Digital y Rpereznet"
+            content="Grilla de señales de tv de RSO, Carilo Digital, Lobos Digital y Rpereznet. Canales Rso, Carilo Digital, Lobos Digital y Rpereznet"
           />
           <meta property="og:url" content="https://canales-rso.vercel.app/" />
           <meta property="og:site_name" content="Grilla de señales" />
           <meta name="twitter:title" content="Grilla de señales de TV" />
           <meta
             name="twitter:description"
-            content="Grilla de señales de tv de RSO, Carilo Digital, Lobos Digital y Rpereznet"
+            content="Grilla de señales de tv de RSO, Carilo Digital, Lobos Digital y Rpereznet. Canales Rso, Carilo Digital, Lobos Digital y Rpereznet"
           />
           <meta name="twitter:image" content="/Logo-RSO.png" />
           <meta name="twitter:site" content="@braianvelarde" />
@@ -113,7 +113,10 @@ export default function Home({ channels }) {
           }}
         />
         <div className="flex space-x-4 justify-center items-center pt-2 pb-6">
-          <h1 className="text-2xl font-semibold">Grilla de señales</h1>
+          <h1 className="text-2xl font-semibold">
+            Grilla de señales de TV de : RSO, Carilo Digital, Lobos Digital y
+            Rpereznet
+          </h1>
           <button
             onClick={() => handleDarkMode()}
             className={
@@ -136,6 +139,9 @@ export default function Home({ channels }) {
             </span>
           </button>
         </div>
+        <h2 className="text-center pb-4">
+          Lista de canales para decodificador.
+        </h2>
         <Filter
           setActivePack={setActivePack}
           setFilteredChannels={setFilteredChannels}
