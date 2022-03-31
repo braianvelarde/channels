@@ -71,7 +71,10 @@ export default function Home({ channels }) {
       </button>
       <div className=" dark:bg-[#303032] text-[#1f1f20] dark:text-white bg-neutral-100 pt-4 pb-4 flex-grow">
         <Head>
-          <title>Grilla de canales de tv - RSO</title>
+          <title>
+            Grilla de canales de tv - RSO, Carilo Digital, Lobos Digital,
+            Rpereznet. Canales de TV HD
+          </title>
           <meta name="viewport" content="width=device-width"></meta>
           <meta
             name="theme-color"
