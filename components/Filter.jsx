@@ -2,13 +2,13 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import FilterButton from "./FilterButton";
 
-export default function Filter({
+const Filter = ({
   setFilteredChannels,
   activePack,
   setActivePack,
   channels,
   filteredChannels,
-}) {
+}) => {
   const filtersRef = useRef(null);
 
   function horizontalWheel(e) {
@@ -112,4 +112,6 @@ export default function Filter({
       </div>
     </div>
   );
-}
+};
+
+export default Filter;

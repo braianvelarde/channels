@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function ChannelCard({ name, number, image }) {
+const ChannelCard = ({ name, number, image }) => {
   return (
     <motion.article
       whileHover={{ y: -5 }}
@@ -21,8 +21,9 @@ export default function ChannelCard({ name, number, image }) {
       </div>
     </motion.article>
   );
-}
-export const MemoizedChannelCard = React.memo(ChannelCard);
+};
+
+export default React.memo(ChannelCard);
 
 function BluredImage({ src, alt }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,5 +42,3 @@ function BluredImage({ src, alt }) {
     />
   );
 }
-
-export const MemoizedBluredImage = React.memo(BluredImage);
