@@ -60,7 +60,7 @@ const Filter = ({
 
   return (
     <div className="pl-4 grid grid-flow-row items-center justify-center space-y-4  font-semibold text-xl overflow-hidden">
-      <h3>Cantidad de canales: {filteredChannels.length}</h3>
+      <h2>Cantidad de canales: {filteredChannels.length}</h2>
       <h4 className="text-sm">Seleccione un pack:</h4>
       <div
         ref={filtersRef}
