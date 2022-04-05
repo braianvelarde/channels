@@ -6,10 +6,6 @@ const ChannelCard = ({ name, number, image }) => {
   return (
     <motion.article
       whileHover={{ y: -5 }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.2 }}
       className="flex flex-col dark:bg-[#39393b] bg-neutral-100 rounded-xl  py-2 shadow-md space-y-2 cursor-pointer"
     >
       <div className="relative self-center h-12 w-2/3">

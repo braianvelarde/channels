@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
 import { GraphQLClient, gql } from "graphql-request";
 import ChannelCard from "../components/ChannelCard";
 import { useState, useEffect } from "react";
@@ -110,63 +109,66 @@ export default function Home({ channels }) {
           })(window,document,'script','dataLayer','GTM-T9MZ4DX');`,
           }}
         />
-        <div className="flex space-x-4 justify-center items-center pt-2 pb-6">
-          <h1 className="text-2xl font-semibold flex space-x-2">
-            <span>Grilla de señales de TV de:</span>
-            <a
-              rel="external noreferrer tag"
-              target="_blank"
-              href="http://www.rsonet.com.ar/"
-              className="hover:underline cursor-pointer"
-            >
-              RSO
-            </a>
-            <a
-              rel="external noreferrer"
-              target="_blank"
-              href="http://www.carilodigital.com.ar/"
-              className="hover:underline cursor-pointer"
-            >
-              Carilo Digital
-            </a>
-            <a
-              rel="external noreferrer tag"
-              target="_blank"
-              href="https://www.lobosdigital.com.ar/"
-              className="hover:underline cursor-pointer"
-            >
-              Lobos Digital
-            </a>
-            <a
-              rel="external noreferrer tag"
-              target="_blank"
-              href="https://rpereznetonline.com.ar/"
-              className="hover:underline cursor-pointer"
-            >
-              Rpereznet
-            </a>
-          </h1>
-          <button
-            onClick={() => handleDarkMode()}
-            className={
-              "bg-[#303032] h-6 w-12 rounded-xl relative cursor-pointer dark:bg-white shadow-md"
-            }
-          >
-            <span
+
+        <div className="flex justify-center items-center gap-4 pt-2 pb-6 mx-2">
+          <h1 className="text-2xl font-semibold flex flex-col items-center">
+            <button
+              onClick={() => handleDarkMode()}
               className={
-                (isDarkMode
-                  ? "translate-x-full bg-[#303032] border-white "
-                  : "translate-x-0 bg-white border-[#303032]") +
-                " rounded-full absolute flex items-center justify-center border-2 top-0 left-0 shadow-md h-full w-6  transition-transform duration-200"
+                "bg-[#303032] h-6 w-12 rounded-xl self-end mb-2 relative cursor-pointer dark:bg-white shadow-md"
               }
             >
-              {isDarkMode ? (
-                <Image src="/moon.svg" alt="moon icon" layout="fill" />
-              ) : (
-                <Image src="/sun.svg" alt="sun icon" layout="fill" />
-              )}
+              <span
+                className={
+                  (isDarkMode
+                    ? "translate-x-full bg-[#303032] border-white "
+                    : "translate-x-0 bg-white border-[#303032]") +
+                  " rounded-full absolute flex items-center justify-center border-2 top-0 left-0 shadow-md h-full w-6  transition-transform duration-200"
+                }
+              >
+                {isDarkMode ? (
+                  <Image src="/moon.svg" alt="moon icon" layout="fill" />
+                ) : (
+                  <Image src="/sun.svg" alt="sun icon" layout="fill" />
+                )}
+              </span>
+            </button>
+            <span>Grilla de señales de TV de:</span>
+            <span className="flex justify-center gap-1 flex-wrap whitespace-nowrap">
+              <a
+                rel="external noreferrer tag"
+                target="_blank"
+                href="http://www.rsonet.com.ar/"
+                className="hover:underline cursor-pointer"
+              >
+                RSO
+              </a>
+              <a
+                rel="external noreferrer"
+                target="_blank"
+                href="http://www.carilodigital.com.ar/"
+                className="hover:underline cursor-pointer"
+              >
+                Carilo Digital
+              </a>
+              <a
+                rel="external noreferrer tag"
+                target="_blank"
+                href="https://www.lobosdigital.com.ar/"
+                className="hover:underline cursor-pointer"
+              >
+                Lobos Digital
+              </a>
+              <a
+                rel="external noreferrer tag"
+                target="_blank"
+                href="https://rpereznetonline.com.ar/"
+                className="hover:underline cursor-pointer"
+              >
+                Rpereznet
+              </a>
             </span>
-          </button>
+          </h1>
         </div>
         <h2 className="text-center pb-4">
           Lista de canales para decodificador HD
@@ -179,28 +181,26 @@ export default function Home({ channels }) {
           channels={channels}
           filteredChannels={filteredChannels}
         />
-        <AnimatePresence exitBeforeEnter initial={false}>
-          <motion.section>
-            <h5 className="text-center py-4">
-              Canales en el pack:{" "}
-              {activePack.toLowerCase().charAt(0).toUpperCase() +
-                activePack.slice(1)}
-              .
-            </h5>
-            <div className="grid grid-cols-2  grid-rows-4 md:grid-cols-4 md:grid-rows-4 xl:grid-cols-9 xl:grid-rows-4 auto-rows-fr gap-4 pt-4 px-4">
-              {filteredChannels
-                ? filteredChannels.map((channel) => (
-                    <ChannelCard
-                      key={channel.id}
-                      name={channel.name}
-                      image={channel.image.url}
-                      number={channel.number}
-                    />
-                  ))
-                : null}
-            </div>
-          </motion.section>
-        </AnimatePresence>
+        <section>
+          <h5 className="text-center py-4">
+            Canales en el pack:{" "}
+            {activePack.toLowerCase().charAt(0).toUpperCase() +
+              activePack.slice(1)}
+            .
+          </h5>
+          <div className="grid grid-cols-2  grid-rows-4 md:grid-cols-4 md:grid-rows-4 xl:grid-cols-9 xl:grid-rows-4 auto-rows-fr gap-4 pt-4 px-4">
+            {filteredChannels
+              ? filteredChannels.map((channel) => (
+                  <ChannelCard
+                    key={channel.id}
+                    name={channel.name}
+                    image={channel.image.url}
+                    number={channel.number}
+                  />
+                ))
+              : null}
+          </div>
+        </section>
         <Footer />
       </div>
     </div>
